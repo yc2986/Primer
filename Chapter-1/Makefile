@@ -16,12 +16,15 @@ CPP_FILES		= $(wildcard $(SRC_DIR)/*.cpp)
 
 # Hello World
 HELLOWORLD 		= ../Executable/Chapter-1/HelloWorld
-HELLOWORD_OBJ	= $(addprefix $(OBJ_DIR)/, HelloWorld.o)
+HELLOWORD_OBJ		= $(addprefix $(OBJ_DIR)/, HelloWorld.o)
 
 # Basic I/O
 BASIC_IO		= ../Executable/Chapter-1/BasicIO
-BASIC_IO_OBJ 	= $(addprefix $(OBJ_DIR)/, BasicIO.o)
+BASIC_IO_OBJ 		= $(addprefix $(OBJ_DIR)/, BasicIO.o)
 
+# Flow Control
+FLOW_CONTROL 		= ../Executable/Chapter-1/FlowControl
+FLOW_CONTROL_OBJ	= $(addprefix $(OBJ_DIR)/, FlowControl.o)
 
 # Compile
 # $@: The filename representing the target.
@@ -31,7 +34,10 @@ BASIC_IO_OBJ 	= $(addprefix $(OBJ_DIR)/, BasicIO.o)
 # $^: The filenames of all the prerequisites, separated by spaces. This list has duplicate filenames removed since for most uses, such as compiling, copying, etc., duplicates are not wanted.
 # $+: Similar to $^, this is the names of all the prerequisites separated by spaces, except that $+ includes duplicates. This variable was created for specific situations such as arguments to linkers where duplicate values have meaning.
 # $*: The stem of the target filename. A stem is typically a filename without its suffix. Its use outside of pattern rules is discouraged.
-all: $(HELLOWORLD) $(BASIC_IO)
+all: $(HELLOWORLD) $(BASIC_IO) $(FLOW_CONTROL)
+
+$(FLOW_CONTROL): $(FLOW_CONTROL_OBJ)
+	$(CC) $(LDFLAGS) -o $@ $<
 
 $(BASIC_IO): $(BASIC_IO_OBJ)
 	$(CC) $(LDFLAGS) -o $@ $<
