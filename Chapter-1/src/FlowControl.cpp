@@ -26,10 +26,14 @@ int main() {
 	 * Continuous cin
 	 */
 	continuous_sum();
-	cout << endl;
 
 	// Ignore a CTRL-d here
 	cin.clear();
+	cin.ignore(1, '\n');
+	cin.ignore(1, cin.eof());
+	
+
+	cout << endl;
 
 	/*
 	 * If statement target counter
@@ -59,11 +63,13 @@ static void for_sum(int start, int end) {
 }
 
 static void continuous_sum() {
-	cout << "[3] Please enter numbers for sum, hit CTRL-d for exit." << endl;
+	cout << "[3] Please enter numbers for sum, type in non integer and enter to exit." << endl;
 	int sum = 0, val = 0;
 	cout << "Sum of:\n";
-	while (cin >> val) 
+	while (cin >> val) {
+		cin.clear();
 		sum += val;
+	}
 	cout << "\nis " << sum << endl;
 }
 
@@ -72,8 +78,10 @@ static void target_counter() {
 	cout << "[4] Please enter the target number." << endl;
 	cin  >> target;
 	cout << "Among numbers:\n"; 
-	while (cin >> val)
+	while (cin >> val) {
+		cin.clear();
 		if (val == target)
 			count++;
+	}
 	cout << "\n" << target << " appears " << count << " times." << endl;
 }
