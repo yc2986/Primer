@@ -26,13 +26,13 @@ public:
 	int getCopy();
 	float getPrice();
 	/* Operator overload */
-	Sales_item & operator=  	(const Sales_item &item);				// =
-	Sales_item & operator+= 	(const Sales_item &item);				// +=
-	Sales_item operator+ 		(const Sales_item &item);				// +
-	bool operator==				(const Sales_item &item);				// ==
-	bool operator!=				(const Sales_item &item);				// !=
-	friend ostream & operator<< (ostream &os, const Sales_item &item);	// <<
-	friend istream & operator>> (istream &is, Sales_item &item);		// >>	
+	Sales_item & operator=  	(const Sales_item &item);		// =
+	Sales_item & operator+= 	(const Sales_item &item);		// +=
+	Sales_item operator+ 		(const Sales_item &item);		// +
+	bool operator==			(const Sales_item &item);		// ==
+	bool operator!=			(const Sales_item &item);		// !=
+	friend ostream & operator<< 	(ostream &os, const Sales_item &item);	// <<
+	friend istream & operator>> 	(istream &is, Sales_item &item);	// >>	
 };
 
 #endif
