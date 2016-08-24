@@ -1,21 +1,21 @@
-CC 				= g++
+CC 			= g++
 
 # Directories
 INCLUDE_DIR 		= include
-SRC_DIR 			= src
-LIB_DIR 			= lib
-OBJ_DIR				= ../Executable/Chapter-1/obj
+SRC_DIR 		= src
+LIB_DIR 		= lib
+OBJ_DIR			= ../Executable/Chapter-1/obj
 
 # Compiler flags
-CPPFLAGS 			= -Wall -std=c++11 -I$(INCLUDE_DIR) -Ofast
+CPPFLAGS 		= -Wall -std=c++11 -I$(INCLUDE_DIR) -Ofast
 # Linker flags
-LDFLAGS 			= 
+LDFLAGS 		= 
 
 # Source file
-CPP_FILES			= $(wildcard $(SRC_DIR)/*.cpp)
+CPP_FILES		= $(wildcard $(SRC_DIR)/*.cpp)
 
 # Hello World
-HELLOWORLD 			= ../Executable/Chapter-1/HelloWorld
+HELLOWORLD 		= ../Executable/Chapter-1/HelloWorld
 HELLOWORD_OBJ		= $(addprefix $(OBJ_DIR)/, HelloWorld.o)
 
 # Basic I/O
