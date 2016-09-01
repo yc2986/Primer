@@ -22,6 +22,10 @@ COMPOUNDTYPES_OBJ	= $(addprefix $(OBJ_DIR)/, CompoundTypes.o)
 CONSTQUALIFIERS 	= ../Executable/Chapter-2/ConstQualifiers
 CONSTQUALIFIERS_OBJ = $(addprefix $(OBJ_DIR)/, ConstQualifiers.o)
 
+# Types
+TYPES 				= ../Executable/Chapter-2/Types
+TYPES_OBJ 			= $(addprefix $(OBJ_DIR)/, Types.o)
+
 # Compile
 # $@: The filename representing the target.
 # $%: The filename element of an archive member specification.
@@ -31,7 +35,11 @@ CONSTQUALIFIERS_OBJ = $(addprefix $(OBJ_DIR)/, ConstQualifiers.o)
 # $+: Similar to $^, this is the names of all the prerequisites separated by spaces, except that $+ includes duplicates. This variable was created for specific situations such as arguments to linkers where duplicate values have meaning.
 # $*: The stem of the target filename. A stem is typically a filename without its suffix. Its use outside of pattern rules is discouraged.
 all: $(COMPOUNDTYPES) \
-	 $(CONSTQUALIFIERS)
+	 $(CONSTQUALIFIERS) \
+	 $(TYPES)
+
+$(TYPES): $(TYPES_OBJ)
+	$(CC) $(LDFLAGS) -o $@ $<
 
 $(CONSTQUALIFIERS): $(CONSTQUALIFIERS_OBJ)
 	$(CC) $(LDFLAGS) -o $@ $<
