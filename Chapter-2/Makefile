@@ -26,6 +26,10 @@ CONSTQUALIFIERS_OBJ = $(addprefix $(OBJ_DIR)/, ConstQualifiers.o)
 TYPES 				= ../Executable/Chapter-2/Types
 TYPES_OBJ 			= $(addprefix $(OBJ_DIR)/, Types.o)
 
+# Sales Data
+SALES_DATA 			= ../Executable/Chapter-2/SalesData
+SALES_DATA_OBJ		= $(addprefix $(OBJ_DIR)/, Sales_data.o)
+
 # Compile
 # $@: The filename representing the target.
 # $%: The filename element of an archive member specification.
@@ -36,7 +40,11 @@ TYPES_OBJ 			= $(addprefix $(OBJ_DIR)/, Types.o)
 # $*: The stem of the target filename. A stem is typically a filename without its suffix. Its use outside of pattern rules is discouraged.
 all: $(COMPOUNDTYPES) \
 	 $(CONSTQUALIFIERS) \
-	 $(TYPES)
+	 $(TYPES) \
+	 $(SALES_DATA)
+
+$(SALES_DATA): $(SALES_DATA_OBJ)
+	$(CC) $(LDFLAGS) -o $@ $<
 
 $(TYPES): $(TYPES_OBJ)
 	$(CC) $(LDFLAGS) -o $@ $<
