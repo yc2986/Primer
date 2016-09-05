@@ -22,6 +22,10 @@ STRING_OBJ			= $(addprefix $(OBJ_DIR)/, String.o)
 VECTOR 				= ../Executable/Chapter-3/Vector
 VECTOR_OBJ 			= $(addprefix $(OBJ_DIR)/, Vector.o)
 
+# Iterator
+ITERATOR 			= ../Executable/Chapter-3/Iterator
+ITERATOR_OBJ 		= $(addprefix $(OBJ_DIR)/, Iterator.o)
+
 # Compile
 # $@: The filename representing the target.
 # $%: The filename element of an archive member specification.
@@ -30,7 +34,12 @@ VECTOR_OBJ 			= $(addprefix $(OBJ_DIR)/, Vector.o)
 # $^: The filenames of all the prerequisites, separated by spaces. This list has duplicate filenames removed since for most uses, such as compiling, copying, etc., duplicates are not wanted.
 # $+: Similar to $^, this is the names of all the prerequisites separated by spaces, except that $+ includes duplicates. This variable was created for specific situations such as arguments to linkers where duplicate values have meaning.
 # $*: The stem of the target filename. A stem is typically a filename without its suffix. Its use outside of pattern rules is discouraged.
-all: $(STRING) $(VECTOR)
+all: $(STRING) \
+	 $(VECTOR) \
+	 $(ITERATOR)
+
+$(ITERATOR): $(ITERATOR_OBJ)
+	$(CC) $(LDFLAGS) -o $@ $<
 
 $(VECTOR): $(VECTOR_OBJ)
 	$(CC) $(LDFLAGS) -o $@ $<
