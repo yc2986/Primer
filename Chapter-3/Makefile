@@ -26,6 +26,10 @@ VECTOR_OBJ 			= $(addprefix $(OBJ_DIR)/, Vector.o)
 ITERATOR 			= ../Executable/Chapter-3/Iterator
 ITERATOR_OBJ 		= $(addprefix $(OBJ_DIR)/, Iterator.o)
 
+# Array
+ARRAY 				= ../Executable/Chapter-3/Array
+ARRAY_OBJ 			= $(addprefix $(OBJ_DIR)/, Array.o)
+
 # Compile
 # $@: The filename representing the target.
 # $%: The filename element of an archive member specification.
@@ -36,7 +40,11 @@ ITERATOR_OBJ 		= $(addprefix $(OBJ_DIR)/, Iterator.o)
 # $*: The stem of the target filename. A stem is typically a filename without its suffix. Its use outside of pattern rules is discouraged.
 all: $(STRING) \
 	 $(VECTOR) \
-	 $(ITERATOR)
+	 $(ITERATOR) \
+	 $(ARRAY)
+
+$(ARRAY): $(ARRAY_OBJ)
+	$(CC) $(LDFLAGS) -o $@ $<
 
 $(ITERATOR): $(ITERATOR_OBJ)
 	$(CC) $(LDFLAGS) -o $@ $<
