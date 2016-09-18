@@ -62,7 +62,11 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 clean:
 # Clean up executables
 	rm $(STRING) \
-	   $(VECTOR)
+	   $(VECTOR) \
+	   $(ITERATOR) \
+	   $(ARRAY)
 # Clean up object files
 	rm $(STRING_OBJ) \
-	   $(VECTOR_OBJ)
+	   $(VECTOR_OBJ) \
+	   $(ITERATOR_OBJ) \
+	   $(ARRAY_OBJ)
