@@ -57,8 +57,10 @@ clean:
 # Clean up executables
 	rm $(CONDITION) \
 	   $(ITERATIVE) \
-	   $(JUMP)
+	   $(JUMP) \
+	   $(EXCEPTION)
 # Clean up object files
 	rm $(CONDITION_OBJ) \
 	   $(ITERATIVE_OBJ) \
-	   $(JUMP_OBJ)
+	   $(JUMP_OBJ) \
+	   $(EXCEPTION_OBJ)
