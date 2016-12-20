@@ -1,15 +1,15 @@
 CC 					= g++
 
 # Directories
-INCLUDE_DIR			= include
-SRC_DIR				= src
-LIB_DIR				= lib
-OBJ_DIR				= ../Executable/Chapter-7/obj
+INCLUDE_DIR 		= include
+SRC_DIR 			= src
+LIB_DIR 			= lib
+OBJ_DIR 			= ../Executable/Chapter-7/obj
 
 # Compiler flags
-CPPFLAGS			= -Wall -std=c++11 -I$(INCLUDE_DIR) -Ofast
+CPPFLAGS 			= -Wall -std=c++11 -I$(INCLUDE_DIR) -Ofast
 # Linker flags
-LDFLAGS				= 
+LDFLAGS 			= 
 
 # Sales_data
 SALES_DATA_LIB 		= ../Executable/Chapter-7/lib/Sales_data.a
