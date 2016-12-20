@@ -59,11 +59,11 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 clean:
 # Clean up executables
 	rm $(COMPOUNDTYPES) \
-       $(CONSTQUALIFIERS) \
-       $(TYPES) \
-       $(SALES_DATA)
+	   $(CONSTQUALIFIERS) \
+	   $(TYPES) \
+	   $(SALES_DATA)
 # Clean up object files
 	rm $(COMPOUNDTYPES_OBJ) \
-       $(CONSTQUALIFIERS_OBJ) \
-       $(TYPES_OBJ) \
-       $(SALES_DATA_OBJ)
+	   $(CONSTQUALIFIERS_OBJ) \
+	   $(TYPES_OBJ) \
+	   $(SALES_DATA_OBJ)

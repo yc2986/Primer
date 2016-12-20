@@ -1,34 +1,31 @@
-CC 					= g++
+CC                  = g++
 
 # Directories
-INCLUDE_DIR			= include
-SRC_DIR				= src
-LIB_DIR				= lib
-OBJ_DIR				= ../Executable/Chapter-3/obj
+INCLUDE_DIR         = include
+SRC_DIR             = src
+LIB_DIR             = lib
+OBJ_DIR             = ../Executable/Chapter-3/obj
 
 # Compiler flags
-CPPFLAGS			= -Wall -std=c++11 -I$(INCLUDE_DIR) -Ofast
+CPPFLAGS            = -Wall -std=c++11 -I$(INCLUDE_DIR) -Ofast
 # Linker flags
-LDFLAGS				= 
-
-# Source file
-CPP_FILES			= $(wildcard $(SRC_DIR)/*.cpp)
+LDFLAGS             = 
 
 # String
-STRING 				= ../Executable/Chapter-3/String
-STRING_OBJ			= $(addprefix $(OBJ_DIR)/, String.o)
+STRING              = ../Executable/Chapter-3/String
+STRING_OBJ          = $(addprefix $(OBJ_DIR)/, String.o)
 
 # Vector
-VECTOR 				= ../Executable/Chapter-3/Vector
-VECTOR_OBJ 			= $(addprefix $(OBJ_DIR)/, Vector.o)
+VECTOR              = ../Executable/Chapter-3/Vector
+VECTOR_OBJ          = $(addprefix $(OBJ_DIR)/, Vector.o)
 
 # Iterator
-ITERATOR 			= ../Executable/Chapter-3/Iterator
-ITERATOR_OBJ 		= $(addprefix $(OBJ_DIR)/, Iterator.o)
+ITERATOR            = ../Executable/Chapter-3/Iterator
+ITERATOR_OBJ        = $(addprefix $(OBJ_DIR)/, Iterator.o)
 
 # Array
-ARRAY 				= ../Executable/Chapter-3/Array
-ARRAY_OBJ 			= $(addprefix $(OBJ_DIR)/, Array.o)
+ARRAY               = ../Executable/Chapter-3/Array
+ARRAY_OBJ           = $(addprefix $(OBJ_DIR)/, Array.o)
 
 # Compile
 # $@: The filename representing the target.
@@ -39,9 +36,9 @@ ARRAY_OBJ 			= $(addprefix $(OBJ_DIR)/, Array.o)
 # $+: Similar to $^, this is the names of all the prerequisites separated by spaces, except that $+ includes duplicates. This variable was created for specific situations such as arguments to linkers where duplicate values have meaning.
 # $*: The stem of the target filename. A stem is typically a filename without its suffix. Its use outside of pattern rules is discouraged.
 all: $(STRING) \
-	 $(VECTOR) \
-	 $(ITERATOR) \
-	 $(ARRAY)
+     $(VECTOR) \
+     $(ITERATOR) \
+     $(ARRAY)
 
 $(ARRAY): $(ARRAY_OBJ)
 	$(CC) $(LDFLAGS) -o $@ $<
