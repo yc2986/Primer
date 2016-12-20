@@ -4,27 +4,27 @@
 using namespace std;
 
 Sales_item::Sales_item() {
-	this->ISBN 		= "X-XXX-XXXXX-X";
+	this->ISBN 			= "X-XXX-XXXXX-X";
 	this->copies_sold 	= 0;
-	this->average_price 	= 0;
+	this->average_price = 0;
 }
 
 Sales_item::Sales_item(string isbn, int copy, float price) {
-	this->ISBN 		= isbn;
+	this->ISBN 			= isbn;
 	this->copies_sold	= copy;
-	this->average_price 	= price;
+	this->average_price = price;
 }
 
 Sales_item::Sales_item(Sales_item &item) {
-	this->ISBN 		= item.ISBN;
+	this->ISBN 			= item.ISBN;
 	this->copies_sold	= item.copies_sold;
-	this->average_price 	= item.average_price;
+	this->average_price = item.average_price;
 }
 
 Sales_item::~Sales_item() {}
 
 void Sales_item::setISBN(string isbn) {
-	this->ISBN 		= isbn;
+	this->ISBN 			= isbn;
 }
 
 void Sales_item::setCopy(int copy) {
@@ -34,7 +34,7 @@ void Sales_item::setCopy(int copy) {
 
 void Sales_item::setPrice(float price) {
 	price = (price >= 0) ? price : 0;
-	this->average_price 	= price;
+	this->average_price = price;
 }
 
 string Sales_item::getISBN() {
@@ -50,9 +50,9 @@ float Sales_item::getPrice() {
 }
 
 Sales_item & Sales_item::operator=(const Sales_item &item) {
-	this->ISBN 		= item.ISBN;
+	this->ISBN 			= item.ISBN;
 	this->copies_sold	= item.copies_sold;
-	this->average_price 	= item.average_price;
+	this->average_price = item.average_price;
 	return *this;
 }
 
@@ -64,13 +64,13 @@ Sales_item & Sales_item::operator+=(const Sales_item &item) {
 	this->average_price = this->average_price * this->copies_sold \
 						+ item.average_price  * item.copies_sold;
 	this->copies_sold 	+= item.copies_sold;
-	this->average_price 	/= this->copies_sold;
+	this->average_price /= this->copies_sold;
 	return *this;
 }
 
 Sales_item Sales_item::operator+(const Sales_item &item) {
 	Sales_item sum = *this;		// Make a copy of self
-	sum += item;			// Use += operator
+	sum += item;				// Use += operator
 	return sum;
 }
 

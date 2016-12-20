@@ -15,16 +15,16 @@ LDFLAGS				=
 CPP_FILES			= $(wildcard $(SRC_DIR)/*.cpp)
 
 # Argument
-ARGUMENT 		= ../Executable/Chapter-6/FunctionArgument
-ARGUMENT_OBJ	= $(addprefix $(OBJ_DIR)/, FunctionArgument.o)
+ARGUMENT 			= ../Executable/Chapter-6/FunctionArgument
+ARGUMENT_OBJ 		= $(addprefix $(OBJ_DIR)/, FunctionArgument.o)
 
 # Return
-RETURN 			= ../Executable/Chapter-6/FunctionReturn
-RETURN_OBJ 		= $(addprefix $(OBJ_DIR)/, FunctionReturn.o)
+RETURN 				= ../Executable/Chapter-6/FunctionReturn
+RETURN_OBJ 			= $(addprefix $(OBJ_DIR)/, FunctionReturn.o)
 
 # Overload
-OVERLOAD 		= ../Executable/Chapter-6/FunctionOverload
-OVERLOAD_OBJ	= $(addprefix $(OBJ_DIR)/, FunctionOverload.o)
+OVERLOAD 			= ../Executable/Chapter-6/FunctionOverload
+OVERLOAD_OBJ 		= $(addprefix $(OBJ_DIR)/, FunctionOverload.o)
 
 # Special
 SPECIAL_DEBUG 		= ../Executable/Chapter-6/SpecialFunction_Debug
@@ -33,8 +33,8 @@ SPECIAL_DEBUG_OBJ	= $(addprefix $(OBJ_DIR)/, SpecialFunction.o)
 SPECIAL_RELEASE		= ../Executable/Chapter-6/SpecialFunction_Release
 
 # Pointer
-POINTER 		= ../Executable/Chapter-6/FunctionPointer
-POINTER_OBJ		= $(addprefix $(OBJ_DIR)/, FunctionPointer.o)
+POINTER 			= ../Executable/Chapter-6/FunctionPointer
+POINTER_OBJ 		= $(addprefix $(OBJ_DIR)/, FunctionPointer.o)
 
 # Compile
 # $@: The filename representing the target.
