@@ -66,13 +66,13 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 .PHONY: clean
 clean:
 # Clean up executables
-    rm $(HELLOWORLD) \
+	rm $(HELLOWORLD) \
        $(BASIC_IO) \
        $(FLOW_CONTROL) \
        $(SALES_ITEM_LIB) \
        $(BOOK_STORE)
 # Clean up object files
-    rm $(HELLOWORD_OBJ) \
+	rm $(HELLOWORD_OBJ) \
        $(BASIC_IO_OBJ) \
        $(FLOW_CONTROL_OBJ) \
        $(SALES_ITEM_OBJ) \
