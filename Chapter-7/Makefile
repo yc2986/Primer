@@ -15,6 +15,10 @@ LDFLAGS             =
 SALES_DATA_LIB      = ../Executable/Chapter-7/lib/Sales_data.a
 SALES_DATA_OBJ      = $(addprefix $(OBJ_DIR)/, Sales_data.o)
 
+# Main function
+MAIN                = ../Executable/Chapter-7/main
+MAIN_OBJ            = $(addprefix $(OBJ_DIR)/, main.o)
+
 
 # Compile
 # $@: The filename representing the target.
@@ -24,7 +28,10 @@ SALES_DATA_OBJ      = $(addprefix $(OBJ_DIR)/, Sales_data.o)
 # $^: The filenames of all the prerequisites, separated by spaces. This list has duplicate filenames removed since for most uses, such as compiling, copying, etc., duplicates are not wanted.
 # $+: Similar to $^, this is the names of all the prerequisites separated by spaces, except that $+ includes duplicates. This variable was created for specific situations such as arguments to linkers where duplicate values have meaning.
 # $*: The stem of the target filename. A stem is typically a filename without its suffix. Its use outside of pattern rules is discouraged.
-all: $(SALES_DATA_LIB)
+all: $(MAIN)
+
+$(MAIN): $(MAIN_OBJ) $(SALES_DATA_LIB)
+	$(CC) $(LDFLAGS) -o $@ $^
 
 $(SALES_DATA_LIB): $(SALES_DATA_OBJ)
 	ar rcs $@ $^
@@ -35,6 +42,8 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.cpp
 .PHONY: clean
 clean:
 # Clean up executables
-	rm $(SALES_DATA_LIB)
+	rm $(SALES_DATA_LIB) \
+	   $(MAIN)
 # Clean up object files 
-	rm $(SALES_DATA_OBJ)
+	rm $(SALES_DATA_OBJ) \
+	   $(MAIN_OBJ)
