@@ -15,8 +15,8 @@
 #include <string>
 
 class Sales_data {
-friend Sales_data add(const Sales_data&, const Sales_data&);
-friend std::ostream &print(std::ostream&, const Sales_data&);
+friend Sales_data add(const Sales_data&, const Sales_data&);    //!< all friend methods should be declared out of class once more
+friend std::ostream &print(std::ostream&, const Sales_data&);   //!< these are friend declaration rather than method declaration
 friend std::istream &read(std::istream&, Sales_data&);
 public:
     // constructor
