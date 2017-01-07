@@ -60,5 +60,5 @@ clean:
 # Clean up object files 
 	rm $(SALES_DATA_OBJ) \
 	   $(SCREEN_OBJ) \
-	   $(SALES_DATA_MAIN_OBJ)
+	   $(SALES_DATA_MAIN_OBJ) \
 	   $(SCREEN_MAIN_OBJ)
