@@ -21,7 +21,7 @@ friend std::istream &read(std::istream&, Sales_data&);
 public:
     // constructor
     Sales_data() = default;
-    Sales_data(const std::string &s) : bookNo(s) { }
+    Sales_data(const std::string &s) : bookNo(s) {}
     Sales_data(const std::string &s, 
                unsigned n, 
                double p)
